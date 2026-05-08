@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WorcestershireSauceFinds - Home</title>
     <link rel="stylesheet" href="style.css">
+    <script src="filter.js" defer></script>
     <script src="script.js" defer></script>
     <script src="icons.js" defer></script>
     <script src="https://unpkg.com/feather-icons"></script>
@@ -29,7 +30,7 @@
 
 
     </div>
-    <div class="f-menu">
+    <div class="f-menu" id="f-menu">
         <div class="sort-by">
             <h3>Sort By</h3>
             <button class="lowprice"></button>
@@ -45,76 +46,125 @@
         </div>
         <div class="stores-box">
             <h3>Stores</h3>
-            <label for="Steam"><img src="https://www.cheapshark.com/img/stores/icons/0.png" alt="🚫">Steam</label>
-            <input type="checkbox" name="Steam" id="" checked>
-            <label for="GamersGate"><img src="https://www.cheapshark.com/img/stores/icons/1.png" alt="🚫">GamersGate</label>
-            <input type="checkbox" name="GamersGate" id="" checked>
-            <label for="GreenManGaming"><img src="https://www.cheapshark.com/img/stores/icons/2.png" alt="🚫">GreenManGaming</label>
-            <input type="checkbox" name="GreenManGaming" id="" checked>
-            <label for="Amazon"><img src="https://www.cheapshark.com/img/stores/icons/3.png" alt="🚫">Amazon</label>
-            <input type="checkbox" name="Amazon" id="" checked>
-            <label for="GameStop"><img src="https://www.cheapshark.com/img/stores/icons/4.png" alt="🚫">GameStop</label>
-            <input type="checkbox" name="GameStop" id="" checked>
-            <label for="Direct2Drive"><img src="https://www.cheapshark.com/img/stores/icons/5.png" alt="🚫"></label>
-            <input type="checkbox" name="Direct2Drive" id="" checked>
-            <label for="GOG"><img src="https://www.cheapshark.com/img/stores/icons/6.png" alt="🚫">Direct2Drive</label>
-            <input type="checkbox" name="GOG" id="" checked>
-            <label for="Origin"><img src="https://www.cheapshark.com/img/stores/icons/7.png" alt="🚫">Origin</label>
-            <input type="checkbox" name="Origin" id="" checked>
-            <label for="Get Games"><img src="https://www.cheapshark.com/img/stores/icons/8.png" alt="🚫">Get Games</label>
-            <input type="checkbox" name="Get Games" id="" checked>
-            <label for="Shiny Loot"><img src="https://www.cheapshark.com/img/stores/icons/9.png" alt="🚫">Shiny Loot</label>
-            <input type="checkbox" name="Shiny Loot" id="" checked>
-            <label for="Humble Store"><img src="https://www.cheapshark.com/img/stores/icons/10.png" alt="🚫">Humble Store</label>
-            <input type="checkbox" name="Humble Store" id="" checked>
-            <label for="Desura"><img src="https://www.cheapshark.com/img/stores/icons/11.png" alt="🚫">Desura</label>
-            <input type="checkbox" name="Desura" id="" checked>
-            <label for="Uplay"><img src="https://www.cheapshark.com/img/stores/icons/12.png" alt="🚫">Uplay</label>
-            <input type="checkbox" name="Uplay" id="" checked>
-            <label for="IndieGameStand"><img src="https://www.cheapshark.com/img/stores/icons/13.png" alt="🚫">IndieGameStand</label>
-            <input type="checkbox" name="IndieGameStand" id="" checked>
-            <label for="Fanatical"><img src="https://www.cheapshark.com/img/stores/icons/14.png" alt="🚫">Fanatical</label>
-            <input type="checkbox" name="Fanatical" id="" checked>
-            <label for="Gamesrocket"><img src="https://www.cheapshark.com/img/stores/icons/15.png" alt="🚫">Gamesrocket</label>
-            <input type="checkbox" name="Gamesrocket" id="" checked>
-            <label for="Games Republic"><img src="https://www.cheapshark.com/img/stores/icons/16.png" alt="🚫">Games Republic</label>
-            <input type="checkbox" name="Games Republic" id="" checked>
-            <label for="SilaGames"><img src="https://www.cheapshark.com/img/stores/icons/17.png" alt="🚫">SilaGames</label>
-            <input type="checkbox" name="SilaGames" id="" checked>
-            <label for="Playfield"><img src="https://www.cheapshark.com/img/stores/icons/18.png" alt="🚫">Playfield</label>
-            <input type="checkbox" name="Playfield" id="" checked>
-            <label for="ImperialGames"><img src="https://www.cheapshark.com/img/stores/icons/19.png" alt="🚫">ImperialGames</label>
-            <input type="checkbox" name="ImperialGames" id="" checked>
-            <label for="WinGameStore"><img src="https://www.cheapshark.com/img/stores/icons/20.png" alt="🚫">WinGameStore</label>
-            <input type="checkbox" name="WinGameStore" id="" checked>
-            <label for="FunStockDigital"><img src="https://www.cheapshark.com/img/stores/icons/21.png" alt="🚫">FunStockDigital</label>
-            <input type="checkbox" name="FunStockDigital" id="" checked>
-            <label for="GameBillet"><img src="https://www.cheapshark.com/img/stores/icons/22.png" alt="🚫">GameBillet</label>
-            <input type="checkbox" name="GameBillet" id="" checked>
-            <label for="Voidu"><img src="https://www.cheapshark.com/img/stores/icons/23.png" alt="🚫">Voidu</label>
-            <input type="checkbox" name="Voidu" id="" checked>
-            <label for="Epic Games Store"><img src="https://www.cheapshark.com/img/stores/icons/24.png" alt="🚫">Epic Games Store</label>
-            <input type="checkbox" name="Epic Games Store" id="" checked>
-            <label for="Razer Game Store"><img src="https://www.cheapshark.com/img/stores/icons/25.png" alt="🚫">Razer Game Store</label>
-            <input type="checkbox" name="Razer Game Store" id="" checked>
-            <label for="Gamesplanet"><img src="https://www.cheapshark.com/img/stores/icons/26.png" alt="🚫">Gamesplanet</label>
-            <input type="checkbox" name="Gamesplanet" id="" checked>
-            <label for="Gamesload"><img src="https://www.cheapshark.com/img/stores/icons/27.png" alt="🚫">Gamesload</label>
-            <input type="checkbox" name="Gamesload" id="" checked>
-            <label for="2Game"><img src="https://www.cheapshark.com/img/stores/icons/28.png" alt="🚫">2Game</label>
-            <input type="checkbox" name="2Game" id="" checked>
-            <label for="IndieGala"><img src="https://www.cheapshark.com/img/stores/icons/29.png" alt="🚫">IndieGala</label>
-            <input type="checkbox" name="IndieGala" id="" checked>
-            <label for="Blizzard Shop"><img src="https://www.cheapshark.com/img/stores/icons/30.png" alt="🚫">Blizzard Shop</label>
-            <input type="checkbox" name="Blizzard Shop" id="" checked>
-            <label for="AllYouPlay"><img src="https://www.cheapshark.com/img/stores/icons/31.png" alt="🚫">AllYouPlay</label>
-            <input type="checkbox" name="AllYouPlay" id="" checked>
-            <label for="DLGamer"><img src="https://www.cheapshark.com/img/stores/icons/32.png" alt="🚫">DLGamer</label>
-            <input type="checkbox" name="DLGamer" id="" checked>
-            <label for="Noctre"><img src="https://www.cheapshark.com/img/stores/icons/33.png" alt="🚫">Noctre</label>
-            <input type="checkbox" name="Noctre" id="" checked>
-            <label for="DreamGame"><img src="https://www.cheapshark.com/img/stores/icons/34.png" alt="🚫">DreamGame</label>
-            <input type="checkbox" name="DreamGame" id="" checked>
+            <div class="ildiv"><label for="Steam"><img src="https://www.cheapshark.com/img/stores/icons/0.png"
+                        alt="🚫">Steam</label>
+                <input type="checkbox" name="Steam" id="" checked>
+            </div>
+            <div class="ildiv"><label for="GamersGate"><img src="https://www.cheapshark.com/img/stores/icons/1.png"
+                        alt="🚫">GamersGate</label>
+                <input type="checkbox" name="GamersGate" id="" checked>
+            </div>
+            <div class="ildiv"> <label for="GreenManGaming"><img src="https://www.cheapshark.com/img/stores/icons/2.png"
+                        alt="🚫">GreenManGaming</label>
+                <input type="checkbox" name="GreenManGaming" id="" checked>
+            </div>
+            <div class="ildiv"><label for="Amazon"><img src="https://www.cheapshark.com/img/stores/icons/3.png"
+                        alt="🚫">Amazon</label>
+                <input type="checkbox" name="Amazon" id="" checked>
+            </div>
+            <div class="ildiv"><label for="GameStop"><img src="https://www.cheapshark.com/img/stores/icons/4.png"
+                        alt="🚫">GameStop</label>
+                <input type="checkbox" name="GameStop" id="" checked>
+            </div>
+            <div class="ildiv"><label for="Direct2Drive"><img src="https://www.cheapshark.com/img/stores/icons/5.png"
+                        alt="🚫">Direct2Drive</label>
+                <input type="checkbox" name="Direct2Drive" id="" checked>
+            </div>
+            <div class="ildiv"> <label for="GOG"><img src="https://www.cheapshark.com/img/stores/icons/6.png"
+                        alt="🚫">GOG</label>
+                <input type="checkbox" name="GOG" id="" checked>
+            </div>
+            <div class="ildiv"><label for="Origin"><img src="https://www.cheapshark.com/img/stores/icons/7.png"
+                        alt="🚫">Origin</label>
+                <input type="checkbox" name="Origin" id="" checked>
+            </div>
+            <div class="ildiv"> <label for="Get Games"><img src="https://www.cheapshark.com/img/stores/icons/8.png"
+                        alt="🚫">Get Games</label>
+                <input type="checkbox" name="Get Games" id="" checked>
+            </div>
+            <div class="ildiv"> <label for="Shiny Loot"><img src="https://www.cheapshark.com/img/stores/icons/9.png"
+                        alt="🚫">Shiny Loot</label>
+                <input type="checkbox" name="Shiny Loot" id="" checked>
+            </div>
+            <div class="ildiv"> <label for="Humble Store"><img src="https://www.cheapshark.com/img/stores/icons/10.png"
+                        alt="🚫">Humble Store</label>
+                <input type="checkbox" name="Humble Store" id="" checked>
+            </div>
+            <div class="ildiv">
+                <label for="Desura"><img src="https://www.cheapshark.com/img/stores/icons/11.png"
+                        alt="🚫">Desura</label>
+                <input type="checkbox" name="Desura" id="" checked>
+            </div>
+            <div class="ildiv"><label for="Uplay"><img src="https://www.cheapshark.com/img/stores/icons/12.png"
+                        alt="🚫">Uplay</label>
+                <input type="checkbox" name="Uplay" id="" checked>
+            </div>
+            <div class="ildiv">
+                <label for="IndieGameStand"><img src="https://www.cheapshark.com/img/stores/icons/13.png"
+                        alt="🚫">IndieGameStand</label>
+                <input type="checkbox" name="IndieGameStand" id="" checked>
+            </div>
+            <div class="ildiv"><label for="Fanatical"><img src="https://www.cheapshark.com/img/stores/icons/14.png"
+                        alt="🚫">Fanatical</label>
+                <input type="checkbox" name="Fanatical" id="" checked>
+            </div>
+            <div class="ildiv"> <label for="Gamesrocket"><img src="https://www.cheapshark.com/img/stores/icons/15.png"
+                        alt="🚫">Gamesrocket</label>
+                <input type="checkbox" name="Gamesrocket" id="" checked>
+            </div>
+            <div class="ildiv"><label for="Games Republic"><img src="https://www.cheapshark.com/img/stores/icons/16.png" alt="🚫">Games Republic</label>
+            <input type="checkbox" name="Games Republic" id="" checked></div>
+            <div class="ildiv"> <label for="SilaGames"><img src="https://www.cheapshark.com/img/stores/icons/17.png" alt="🚫">SilaGames</label>
+            <input type="checkbox" name="SilaGames" id="" checked></div>
+            <div class="ildiv"> <label for="Playfield"><img src="https://www.cheapshark.com/img/stores/icons/18.png" alt="🚫">Playfield</label>
+            <input type="checkbox" name="Playfield" id="" checked></div>
+            <div class="ildiv"><label for="ImperialGames"><img src="https://www.cheapshark.com/img/stores/icons/19.png" alt="🚫">ImperialGames</label>
+            <input type="checkbox" name="ImperialGames" id="" checked></div>
+            <div class="ildiv"><label for="WinGameStore"><img src="https://www.cheapshark.com/img/stores/icons/20.png" alt="🚫">WinGameStore</label>
+            <input type="checkbox" name="WinGameStore" id="" checked></div>
+            <div class="ildiv"><label for="FunStockDigital"><img src="https://www.cheapshark.com/img/stores/icons/21.png" alt="🚫">FunStockDigital</label>
+            <input type="checkbox" name="FunStockDigital" id="" checked></div>
+            <div class="ildiv"><label for="GameBillet"><img src="https://www.cheapshark.com/img/stores/icons/22.png" alt="🚫">GameBillet</label>
+            <input type="checkbox" name="GameBillet" id="" checked></div>
+            <div class="ildiv"><label for="Voidu"><img src="https://www.cheapshark.com/img/stores/icons/23.png" alt="🚫">Voidu</label>
+            <input type="checkbox" name="Voidu" id="" checked></div>
+            <div class="ildiv"><label for="Epic Games Store"><img src="https://www.cheapshark.com/img/stores/icons/24.png" alt="🚫">Epic Games Store</label>
+            <input type="checkbox" name="Epic Games Store" id="" checked></div>
+            <div class="ildiv"> <label for="Razer Game Store"><img src="https://www.cheapshark.com/img/stores/icons/25.png" alt="🚫">Razer Game Store</label>
+            <input type="checkbox" name="Razer Game Store" id="" checked></div>
+            <div class="ildiv"><label for="Gamesplanet"><img src="https://www.cheapshark.com/img/stores/icons/26.png" alt="🚫">Gamesplanet</label>
+            <input type="checkbox" name="Gamesplanet" id="" checked></div>
+            <div class="ildiv"><label for="Gamesload"><img src="https://www.cheapshark.com/img/stores/icons/27.png" alt="🚫">Gamesload</label>
+            <input type="checkbox" name="Gamesload" id="" checked></div>
+            <div class="ildiv"><label for="2Game"><img src="https://www.cheapshark.com/img/stores/icons/28.png" alt="🚫">2Game</label>
+            <input type="checkbox" name="2Game" id="" checked></div>
+            <div class="ildiv"><label for="IndieGala"><img src="https://www.cheapshark.com/img/stores/icons/29.png" alt="🚫">IndieGala</label>
+            <input type="checkbox" name="IndieGala" id="" checked></div>
+            <div class="ildiv"><label for="Blizzard Shop"><img src="https://www.cheapshark.com/img/stores/icons/30.png" alt="🚫">Blizzard Shop</label>
+            <input type="checkbox" name="Blizzard Shop" id="" checked></div>
+            <div class="ildiv"><label for="AllYouPlay"><img src="https://www.cheapshark.com/img/stores/icons/31.png" alt="🚫">AllYouPlay</label>
+            <input type="checkbox" name="AllYouPlay" id="" checked></div>
+            <div class="ildiv"><label for="DLGamer"><img src="https://www.cheapshark.com/img/stores/icons/32.png" alt="🚫">DLGamer</label>
+            <input type="checkbox" name="DLGamer" id="" checked></div>
+            <div class="ildiv"><label for="Noctre"><img src="https://www.cheapshark.com/img/stores/icons/33.png" alt="🚫">Noctre</label>
+            <input type="checkbox" name="Noctre" id="" checked></div>
+            <div class="ildiv"><label for="DreamGame"><img src="https://www.cheapshark.com/img/stores/icons/34.png" alt="🚫">DreamGame</label>
+            <input type="checkbox" name="DreamGame" id="" checked></div>
+            
+            
+            
+            
+            
+           
+            
+            
+            
+            
+            
+            
+            
+            
+            
         </div>
 
     </div>
