@@ -7,6 +7,7 @@ sBtn.addEventListener("keypress", function(e) {
         fetchDeals()
     }
 })
+
 let currentResults = []
 function fetchDeals() {
     const query = sInput.value.trim().toLowerCase()
@@ -66,3 +67,4 @@ function displayDeals(data) {
         
     }
 }
+
