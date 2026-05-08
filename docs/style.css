@@ -192,3 +192,9 @@ h2 {
     flex: 1;
     justify-content: center;
 }
+
+.lowprice, .perc-saved, .rating-s {
+    font-size: 14px;
+    color: #67afee;
+    background-color: #02192e;
+}

@@ -2,7 +2,7 @@ const sInput = document.querySelector("#s-input")
 const sBtn = document.querySelector("#s-btn")
 const resContainer = document.querySelector("#results") 
 sBtn.addEventListener("click", fetchDeals)
-sBtn.addEventListener("keypress", function(e) {
+sInput.addEventListener("keypress", function(e) {
     if(e.key === "Enter") {
         fetchDeals()
     }
