@@ -69,16 +69,17 @@ h1 {
 
 #s-btn {
     padding: 12px 24px;
-    background: #ffa0e2;
-    border: none;
+    background: #d64cad;
+    border:  #30363d 1px solid;
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
     font-size: 18px;
+    transition: .4s ease;
 }
 
 #s-btn:hover {
-    background: #ffbeeb;
+    background: #f87fd4;
 }
 
 .results-grid {
@@ -98,6 +99,9 @@ h1 {
     width: 200px;
     height: 200px;
     object-fit: cover;
+    margin: 10px;
+    border-radius: 25px;
+    box-shadow: 0 0 5px 3px #67afee
 }
 
 .deal-card .info {
@@ -116,7 +120,7 @@ h1 {
 
 #f-tog {
     padding: 12px 24px;
-    background: #ffa0e2;
+    background: #d64cad;;
     border: none;
     border-radius: 8px;
     font-weight: bold;
@@ -125,7 +129,7 @@ h1 {
 }
 
 #f-tog:hover {
-    background: #ffbeeb;
+    background: #f87fd4;
 }
 
 /* Style for the Watchlist */
