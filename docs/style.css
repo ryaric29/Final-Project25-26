@@ -48,7 +48,7 @@ h1 {
     justify-content: center; 
     display: flex;
     gap: 10px;
-    max-width: 100%;
+    width: 85%;
     margin: 0 auto 30px;
     
 }
@@ -188,9 +188,11 @@ h2 {
 }
 
 .deal-card {
-    max-width: 1000px;
+    min-width: 85%;
+    max-width: 85%;
     flex: 1;
-    justify-content: center;
+    margin: 0 auto;
+   
 }
 
 .lowprice, .perc-saved, .rating-s {
