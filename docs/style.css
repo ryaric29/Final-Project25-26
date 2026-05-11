@@ -48,7 +48,7 @@ h1 {
     justify-content: center; 
     display: flex;
     gap: 10px;
-    width: 85%;
+    width: 90%;
     margin: 0 auto 30px;
     
 }
@@ -141,6 +141,7 @@ h1 {
 #f-menu {
     
 }
+
 #f-tog:hover {
     background: #f87fd4;
 }
@@ -188,8 +189,8 @@ h2 {
 }
 
 .deal-card {
-    min-width: 85%;
-    max-width: 85%;
+    min-width: 90%;
+    max-width: 90%;
     flex: 1;
     margin: 0 auto;
    
