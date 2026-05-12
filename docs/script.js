@@ -2,6 +2,7 @@ const sInput = document.querySelector("#s-input")
 const sBtn = document.querySelector("#s-btn")
 const resContainer = document.querySelector("#results") 
 sBtn.addEventListener("click", fetchDeals)
+
 sInput.addEventListener("keypress", function(e) {
     if(e.key === "Enter") {
         fetchDeals()
@@ -15,7 +16,7 @@ function fetchDeals() {
         resContainer.innerHTML = '<div class="empty-state">Please type a name</div>';
         return
     }
-    const url = `https://www.cheapshark.com/api/1.0/deals?title=${query}`
+    let url = `https://www.cheapshark.com/api/1.0/deals?title=${query}`
      fetch(url)
         .then(function(response) {
             return response.json()
