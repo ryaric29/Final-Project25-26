@@ -50,7 +50,6 @@ h1 {
     gap: 10px;
     width: 90%;
     margin: 0 auto 30px;
-    
 }
 
 #s-input {
@@ -193,7 +192,6 @@ h2 {
     max-width: 90%;
     flex: 1;
     margin: 0 auto;
-   
 }
 
 .lowprice, .perc-saved, .rating-s {

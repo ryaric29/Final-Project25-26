@@ -56,7 +56,7 @@ function displayDeals(data) {
       const card = document.createElement("div")
         card.className = "deal-card"
         card.innerHTML = `
-            <img src="${imageUrl}" alt="${deal.title}">
+            <img class="deal-img" src="${imageUrl}" alt="${deal.title}">
             <div class="deal-price">${deal.salePrice} <s>${deal.normalPrice}</s></div>
             <div class="info">
                 <h3>${deal.title}</h3>
