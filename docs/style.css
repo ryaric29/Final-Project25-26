@@ -192,8 +192,11 @@ h2 {
     max-width: 90%;
     flex: 1;
     margin: 0 auto;
+<<<<<<< HEAD
     display: flex;
     flex-direction: column;
+=======
+>>>>>>> 59f6ab913e849d6351a20c46538beda484a472cd
 }
 
 .lowprice, .perc-saved, .rating-s {
