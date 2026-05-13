@@ -206,7 +206,7 @@ h2 {
 }
 
 .lowprice, .perc-saved, .rating-s {
-    padding: 6px 16px;
+    padding: 10px 16px;
     border:  #30363d 1px solid;
     border-radius: 8px;
     font-weight: bold;
@@ -215,4 +215,6 @@ h2 {
     transition: .4s ease;
     display: flex;
     flex-direction: column;
+    width: 200px;
+    margin-top: 10px;
 }
