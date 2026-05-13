@@ -3,7 +3,7 @@ const menu = document.querySelector('#f-menu')
 const checkboxes = document.querySelectorAll('.ildiv input')
 filterButton.addEventListener('click', toggleFilter)
 let filteredStores = []
-let checkboxString = ''
+let checkboxString = '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35'
 function toggleFilter() {
     menu.classList.toggle('f-menu')
     if(menu.classList.contains('f-menu')){
@@ -25,17 +25,8 @@ function updateCheckboxes() {
         filteredStores.push(checkbox.name)
     }
 }
-let checkboxString = filteredStores.join()
+checkboxString = filteredStores.join()
 console.log(checkboxString)
 }
 
-function filterStores() {
-    if(filteredStores.length === 35){
-        return
-    } else {
-        url += `&storeID=${checkboxString}`
-    }
-    console.log(url)
-
-}
 

@@ -1,8 +1,10 @@
+
 const sInput = document.querySelector("#s-input")
 const sBtn = document.querySelector("#s-btn")
 const resContainer = document.querySelector("#results") 
-sBtn.addEventListener("click", fetchDeals)
 
+let url = `https://www.cheapshark.com/api/1.0/deals?`
+sBtn.addEventListener("click", fetchDeals)
 sInput.addEventListener("keypress", function(e) {
     if(e.key === "Enter") {
         fetchDeals()
@@ -16,7 +18,13 @@ function fetchDeals() {
         resContainer.innerHTML = '<div class="empty-state">Please type a name</div>';
         return
     }
-    let url = `https://www.cheapshark.com/api/1.0/deals?title=${query}`
+    url += `title=${query}`
+    if(filteredStores.length === 35){
+        return
+    } else if(filteredStores !== 35) {
+        url += `&storeID=${checkboxString}`
+    }
+
      fetch(url)
         .then(function(response) {
             return response.json()
@@ -44,6 +52,8 @@ function fetchDeals() {
        
             })
              displayDeals(cheapestDeal) 
+             console.log(url)
+             url = `https://www.cheapshark.com/api/1.0/deals?`
         
 })
 function displayDeals(data) {
@@ -67,5 +77,6 @@ function displayDeals(data) {
         })
         
     }
+
 }
 
