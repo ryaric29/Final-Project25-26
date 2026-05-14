@@ -194,24 +194,14 @@ h2 {
     max-width: 90%;
     flex: 1;
     margin: 0 auto;
-<<<<<<< HEAD
     display: flex;
     flex-direction: column;
-=======
->>>>>>> 59f6ab913e849d6351a20c46538beda484a472cd
 }
 
 .lowprice, .perc-saved, .rating-s {
     font-size: 14px;
     color: #67afee;
     background-color: #161b22;
-}
-
-.lowprice:hover, .perc-saved:hover, .rating-s:hover {
-    background-color: #1e252e;
-}
-
-.lowprice, .perc-saved, .rating-s {
     padding: 10px 16px;
     border:  #30363d 1px solid;
     border-radius: 8px;
@@ -225,10 +215,60 @@ h2 {
     margin-top: 10px;
 }
 
+.lowprice:hover, .perc-saved:hover, .rating-s:hover {
+    background-color: #1e252e;
+}
+
 .ildiv {
     margin-top: 4px;
+    border: 1px solid #30363d;
+    background-color: #161b22;
+    border-radius: 5px;
+    justify-content: center;
+}
+.ildiv input {
+  appearance: none; 
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: #22203b;
+  border: 1px solid #30363d; 
+  cursor: pointer;
+  transition: .4s ease
+}
+.ildiv input:checked {
+  background-color: #5c53da;
+  background-image: url('images/check.svg');
+  background-size: contain;
+}
+.ildiv:hover {
+    background-color: #1e2521;
+}
+.ildiv img{
+    border-radius: 100%;
 }
 
 .p-range-title {
     margin-bottom: 8px;
+}
+#sel-all, #des-all, #clear-sort {
+    color: #67afee;
+    background-color: #161b22;
+    border:  #30363d 1px solid;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .4s ease;
+    padding: 4px;
+}
+.active {
+    background-color: #6c85a7;
+    color: #161b22;
+    box-shadow: 0 0 3px 2px #4c90cc;
+}
+.active:hover{
+    background-color: #a4b4ca;
+    color: #161b22;
+    box-shadow: 0 0 3px 2px #576169;
 }

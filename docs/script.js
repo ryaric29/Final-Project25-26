@@ -3,7 +3,6 @@ const sInput = document.querySelector("#s-input")
 const sBtn = document.querySelector("#s-btn")
 const resContainer = document.querySelector("#results") 
 
-let url = `https://www.cheapshark.com/api/1.0/deals?`
 sBtn.addEventListener("click", fetchDeals)
 sInput.addEventListener("keypress", function(e) {
     if(e.key === "Enter") {
@@ -18,13 +17,12 @@ function fetchDeals() {
         resContainer.innerHTML = '<div class="empty-state">Please type a name</div>';
         return
     }
-    url += `title=${query}`
-    if(filteredStores.length === 35){
-        return
-    } else if(filteredStores !== 35) {
-        url += `&storeID=${checkboxString}`
-    }
-
+        let url = `https://www.cheapshark.com/api/1.0/deals?title=${query}`
+   if (filteredStores.length < 35) {
+    url += `&storeID=${checkboxString}`
+} else if(filteredStores.length === 0) {
+    return
+}
      fetch(url)
         .then(function(response) {
             return response.json()
@@ -33,33 +31,39 @@ function fetchDeals() {
             let cheapestDeal = []
             data.forEach(deal => {
                 let multiples = false
+                if (Number(deal.salePrice) === Number(deal.normalPrice)) { 
+                            return
+                         }
                 for(let i = 0; i < cheapestDeal.length; i++) {
                     if(cheapestDeal[i].gameID === deal.gameID){
                         multiples = true
                         let cheapestPrice = Number(deal.salePrice)
-                        let  checkedPrice = Number(cheapestDeal[i].salePrice)
-                
+                        let checkedPrice = Number(cheapestDeal[i].salePrice)
                         if(cheapestPrice < checkedPrice) {
                             cheapestDeal[i] = deal
-                        }
+                        } 
+                        
+
+                        
                     } 
                   
                 }
                 if(multiples === false) {
                 cheapestDeal.push(deal)
-            
-        }
+                }
+                
+                
        
             })
              displayDeals(cheapestDeal) 
              console.log(url)
-             url = `https://www.cheapshark.com/api/1.0/deals?`
+            
         
-})
+})}
 function displayDeals(data) {
     resContainer.innerHTML = ""
     if (data.length === 0) {
-        resContainer.innerHTML = '<div class="empty-state">No Deals Found :( </div>'
+        resContainer.innerHTML = `<div class="empty-state">No Deals Found for "${sInput.value}" :( </div>`
         return
     }
     data.forEach(deal => {
@@ -78,5 +82,4 @@ function displayDeals(data) {
         
     }
 
-}
 
