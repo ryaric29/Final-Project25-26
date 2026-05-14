@@ -1,4 +1,4 @@
-
+const ApplyBtn = document.querySelector('#apply-changes')
 const sInput = document.querySelector("#s-input")
 const sBtn = document.querySelector("#s-btn")
 const resContainer = document.querySelector("#results") 
@@ -9,7 +9,7 @@ sInput.addEventListener("keypress", function(e) {
         fetchDeals()
     }
 })
-
+ApplyBtn.addEventListener('click', fetchDeals)
 let currentResults = []
 function fetchDeals() {
     const query = sInput.value.trim().toLowerCase()
@@ -76,6 +76,7 @@ function displayDeals(data) {
             <div class="info">
                 <h3>${deal.title}</h3>
             </div>
+            <button class="all-games-deals"> See more deals for ${deal.title} </button>
         `
         resContainer.appendChild(card)
         })
