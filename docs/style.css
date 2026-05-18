@@ -17,7 +17,7 @@ body {
 .main-header {
   background-color: #02192e;
   padding: 30px 30px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 .main-header .container {
@@ -322,5 +322,43 @@ h2 {
 .all-games-deals {
     
 }
-
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  left: -250px;
+  transition: 0.3s; 
+  background-color: #111;
+}
+.sidebar:hover{
+    background-color: #111;
+}
+.sidebar.active {
+  left: 0;
+}
+#sidebar-toggle{
+    padding: 12px 24px;
+    background: #36be58;
+    border:  #30363d 1px solid;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+    transition: .3s;
+}
+.sidebaroff {
+    display: none;
+    transition: .3s;
+}
+#sXbtn {
+    background: #343a3e;
+    color: whitesmoke;
+    position: absolute;
+    right: 0;
+    padding: 5px;
+}
+#sXbtn:hover {
+    background: #30363d;
+}
 

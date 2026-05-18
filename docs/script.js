@@ -82,5 +82,17 @@ function displayDeals(data) {
         })
         
     }
+const sidebarToggle = document.querySelector('#sidebar-toggle')
+const sidebar = document.querySelector('#sidebar')
+const sideXbtn = document.querySelector('#sXbtn')
+sidebarToggle.addEventListener('click', function() {
+  sidebar.classList.toggle('active')
+  sidebarToggle.classList.toggle('sidebaroff')
+})
+sideXbtn.addEventListener('click', function() {
+  sidebar.classList.toggle('active')
+  sidebarToggle.classList.toggle('sidebaroff')
+})
+
 
 
