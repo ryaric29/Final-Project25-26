@@ -348,8 +348,9 @@ h2 {
     transition: .3s;
 }
 .sidebaroff {
-    display: none;
-    transition: .3s;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.3s, opacity 0.3s;
 }
 #sXbtn {
     background: #343a3e;
