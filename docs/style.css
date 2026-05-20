@@ -109,7 +109,7 @@ h1 {
 .deal-card img {
     width: 200px;
     height: 200px;
-    object-fit: cover;
+    object-fit: fill;
     margin: 10px;
     border-radius: 25px;
     box-shadow: 0 0 5px 3px #67afee
@@ -331,7 +331,10 @@ h2 {
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: 15px;
-    border: solid #161b22 5px;
+    border-top: solid #343a3e 2px;
+    border-right: solid #161b22;
+    border-left: solid #161b22;
+    border-bottom: solid #161b22;
     text-decoration: underline;
 }
 
