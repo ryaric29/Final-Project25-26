@@ -47,12 +47,8 @@ h1 {
     height: 35px;
 }
 
-.amogus-img {
-    width: 1px;
-    height: 1px;
-}
 
-.skibidi-box {
+.s-box {
     justify-content: center; 
     display: flex;
     gap: 10px;
@@ -106,7 +102,7 @@ h1 {
     overflow: hidden;
 }
 
-.deal-card img {
+.deal-img {
     width: 200px;
     height: 200px;
     object-fit: fill;
@@ -167,7 +163,7 @@ h1 {
     max-width: 1000px;
     background: #02192e;
     border-radius: 50px;
-    
+    margin-bottom: 30px;
 }
 
 /* Style for the Watchlist */
@@ -385,4 +381,17 @@ h2 {
 #sXbtn:hover {
     background: #30363d;
 }
-
+.link-to-image {
+    height: 35px;
+    width: 35px;
+}
+.link-to-btn {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    position: absolute;
+    right: 5%;
+    background-color: #2a2f32;
+    border-left: #0f3e80 3px;
+    border
+}

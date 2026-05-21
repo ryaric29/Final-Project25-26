@@ -76,6 +76,7 @@ function displayDeals(data) {
             <div class="info">
                 <h3>${deal.title}</h3>
             </div>
+            <button class="link-to-btn"><img class="link-to-image" src="images/external-link (1).svg"></button>
             <button class="all-games-deals"> See more deals for ${deal.title} </button>
         `
         resContainer.appendChild(card)
