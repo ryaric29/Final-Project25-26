@@ -87,7 +87,9 @@ function displayDeals(data) {
             <div class="info">
                 <h3>${deal.title}</h3>
             </div>
-            <button class="link-to-btn"><img class="link-to-image" src="images/external-link (1).svg"></button>
+            <a class="link-to-btn" href="https://www.cheapshark.com/redirect?dealID=${deal.dealID}" target="_blank">
+                <button class="link-to-btn"><img class="link-to-image" src="images/external-link (1).svg"></button></a>
+            </a>
             <button class="all-games-deals"> See more deals for ${deal.title} </button>
         `
         resContainer.appendChild(card)
