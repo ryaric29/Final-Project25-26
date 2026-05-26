@@ -34,6 +34,16 @@ url += `&sortBy=Savings`
 url += `&sortBy=DealRating`
     }
 })
+if(minPriceInp.value && maxPriceInp.value) {
+    url += `&lowerPrice=${minPriceInp.value}`
+    url += `&upperPrice=${maxPriceInp.value}`
+} else if (minPriceInp.value && !maxPriceInp.value) {
+    url += `&lowerPrice=${minPriceInp.value}`
+} else if (!minPriceInp.value && maxPriceInp.value) {
+    url += `&upperPrice=${maxPriceInp.value}`
+} else if (!minPriceInp.value && !maxPriceInp.value){
+ return
+}
      fetch(url)
         .then(function(response) {
             return response.json()
