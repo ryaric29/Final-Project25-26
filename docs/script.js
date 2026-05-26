@@ -23,6 +23,17 @@ function fetchDeals() {
 } else if(filteredStores.length === 0) {
     return
 }
+filterBtns.forEach(btn => {
+    if(btn.classList.contains('lowprice') && btn.classList.contains('active')){
+url += `&sortBy=Price`
+    }
+    if(btn.classList.contains('perc-saved') && btn.classList.contains('active')){
+url += `&sortBy=Savings`
+    }
+    if(btn.classList.contains('rating-s') && btn.classList.contains('active')){
+url += `&sortBy=DealRating`
+    }
+})
      fetch(url)
         .then(function(response) {
             return response.json()
