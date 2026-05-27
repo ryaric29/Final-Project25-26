@@ -41,8 +41,6 @@ if(minPriceInp.value && maxPriceInp.value) {
     url += `&lowerPrice=${minPriceInp.value}`
 } else if (!minPriceInp.value && maxPriceInp.value) {
     url += `&upperPrice=${maxPriceInp.value}`
-} else if (!minPriceInp.value && !maxPriceInp.value){
- return
 }
      fetch(url)
         .then(function(response) {
@@ -93,9 +91,9 @@ function displayDeals(data) {
         card.className = "deal-card"
         card.innerHTML = `
             <img class="deal-img" src="${imageUrl}" alt="${deal.title}">
-            <div class="deal-price">${deal.salePrice} <s>${deal.normalPrice}</s></div>
+            <div class="deal-price"><strong class="sale-price">$${deal.salePrice}</strong> <s class="normal-price">$${deal.normalPrice}</s></div>
             <div class="info">
-                <h3>${deal.title}</h3>
+                <h3 class="deal-title">${deal.title}</h3>
             </div>
             <a class="link-to-btn" href="https://www.cheapshark.com/redirect?dealID=${deal.dealID}" target="_blank">
                 <button class="link-to-btn"><img class="link-to-image" src="images/external-link (1).svg"></button></a>
