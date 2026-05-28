@@ -15,15 +15,15 @@ body {
 }
 
 .main-header {
-  background-color: #02192e;
-  padding: 30px 30px;
-  margin-bottom: 15px;
+    background-color: #02192e;
+    padding: 30px 30px;
+    margin-bottom: 15px;
 }
 
 .main-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 h1 {
@@ -35,11 +35,11 @@ h1 {
 
 .logo {
 
-  font-size: 35px;
-  font-weight: bold;
-  color: #ffffff;
-  transition: transform 0.3s ease;
-  text-align: left;
+    font-size: 35px;
+    font-weight: bold;
+    color: #ffffff;
+    transition: transform 0.3s ease;
+    text-align: left;
 }
 
 .logo-img {
@@ -103,12 +103,13 @@ h1 {
 }
 
 .deal-img {
-    width: 200px;
-    height: 200px;
-    object-fit: fill;
     margin: 10px;
     border-radius: 25px;
-    box-shadow: 0 0 5px 3px #67afee
+    box-shadow: 0 0 5px 3px #67afee;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    flex-shrink: 0;
 }
 
 .deal-card .info {
@@ -202,11 +203,12 @@ h2 {
 .deal-card {
     min-width: 90%;
     max-width: 90%;
-    flex: 1;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    text-align: right;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
 }
 
 .lowprice, .perc-saved, .rating-s {
@@ -240,21 +242,21 @@ h2 {
 }
 
 .ildiv input {
-  appearance: none; 
-  -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  background-color: #22203b;
-  border: 1px solid #30363d; 
-  cursor: pointer;
-  transition: .4s ease
+    appearance: none; 
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background-color: #22203b;
+    border: 1px solid #30363d; 
+    cursor: pointer;
+    transition: .4s ease
 }
 
 .ildiv input:checked {
-  background-color: #5c53da;
-  background-image: url('images/check.svg');
-  background-size: contain;
+    background-color: #5c53da;
+    background-image: url('images/check.svg');
+    background-size: contain;
 }
 
 .ildiv:hover {
@@ -323,35 +325,30 @@ h2 {
 }
 
 .all-games-deals {
-     display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
+    display: inline-flex;
+    align-items: right;
+    justify-content: right;
     width: fit-content;
-
     padding: 10px 18px;
-
     background: #2563eb;
-
     color: white;
-
     border-radius: 10px;
-
     text-decoration: none;
-
     font-weight: 600;
-
     transition: 0.2s ease;
 }
 
+.all-games-deals:hover {
+    background: #1e40af;
+}
+
 .sidebar {
-  height: 100%;
-  width: 250px;
-  position: fixed;
-  left: -250px;
-  transition: 0.3s; 
-  background-color: #111;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    left: -250px;
+    transition: 0.3s; 
+    background-color: #111;
 }
 
 .sidebar:hover{
@@ -359,8 +356,8 @@ h2 {
 }
 
 .sidebar.active {
-  left: 0;
-  top: 0;
+    left: 0;
+    top: 0;
 }
 
 #sidebar-toggle{
@@ -392,41 +389,60 @@ h2 {
 #sXbtn:hover {
     background: #30363d;
 }
+
 .link-to-image {
     height: 35px;
     width: 35px;
 }
+
 .link-to-btn {
-    width: 50px;
+    width: 90px;
     height: 50px;
     margin-bottom: 15px;
     position: absolute;
     right: 5%;
     background-color: #2a2f32;
     border-left: #0f3e80 3px;
-    border
 }
+
 .normal-price {
-        color: #8b949e;
-        font-size: 20px;
-    }
+    color: #8b949e;
+    font-size: 20px;
+}
+
 .sale-price {
-        color: #67afee;
-        font-size: 26px;
-    }
+    color: #67afee;
+    font-size: 26px;
+}
+
 .deal-title {
     font-size: 19px;
     color: #114776;
 }
+
 .info {
     display: flex;
     flex-direction: column;
-
     justify-content: center;
-
     gap: 12px;
-
     flex: 1;
-
     text-align: left;
+}
+
+.add-to-cart {
+    display: inline-flex;
+    align-items: right;
+    justify-content: right;
+    width: fit-content;
+    padding: 10px 18px;
+    background: #2563eb;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.add-to-cart:hover {
+    background: #1e40af;
 }
