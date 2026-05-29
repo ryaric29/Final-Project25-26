@@ -1,6 +1,5 @@
-
+const cartContainer = document.querySelector("#cart-container")
 let cart = [] 
-let currentResults = []
 
 
 // LOCAL STORAGE FUNCTIONS
@@ -31,7 +30,7 @@ function renderCart(){
         card.innerHTML = `
         <img src="${game.thumb}" alt="${game.title}">
         <div class="info">
-            <h3>${game.name}</h3>
+            <h3>${game.title}</h3>
             <button class="remove-btn">❌ Remove</button>
         </div>
         `
@@ -60,7 +59,7 @@ function toggleCart(game){
         }
         cart = newCart
     } else {
-        push.game
+        cart.push(game)
     }
     saveCart()
     renderCart()

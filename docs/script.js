@@ -2,7 +2,6 @@ const ApplyBtn = document.querySelector('#apply-changes')
 const sInput = document.querySelector("#s-input")
 const sBtn = document.querySelector("#s-btn")
 const resContainer = document.querySelector("#results")
-const cartContainer = document.querySelector("#cart-container")
 sBtn.addEventListener("click", fetchDeals)
 sInput.addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
@@ -74,6 +73,7 @@ function fetchDeals() {
 
 
             })
+            currentResults = cheapestDeal
             displayDeals(cheapestDeal)
             console.log(url)
 
@@ -90,6 +90,7 @@ function displayDeals(data) {
         let imageUrl = deal.thumb
         const card = document.createElement("div")
         card.className = "deal-card"
+        const inCart = cart.some(item => item.gameID === deal.gameID)
         card.innerHTML = `
             <img class="deal-img" src="${imageUrl}" alt="${deal.title}">
             <div class="deal-price"><strong class="sale-price">$${deal.salePrice}</strong> <s class="normal-price">$${deal.normalPrice}</s></div>
@@ -100,7 +101,9 @@ function displayDeals(data) {
                 <button class="link-to-btn"><img class="link-to-image" src="images/external-link (1).svg"></button></a>
             </a>
             <button class="all-games-deals"> See more deals for ${deal.title} </button>
-            <button class="add-to-cart">Add to Cart</button>
+            <button class="add-to-cart">
+    ${inCart ? "Remove from Cart" : "Add to Cart"}
+</button>
         `
         resContainer.appendChild(card)
         const addBtn = card.querySelector(".add-to-cart")
