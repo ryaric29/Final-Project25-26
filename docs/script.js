@@ -2,6 +2,7 @@ const ApplyBtn = document.querySelector('#apply-changes')
 const sInput = document.querySelector("#s-input")
 const sBtn = document.querySelector("#s-btn")
 const resContainer = document.querySelector("#results")
+const moreDealsBtn = document.querySelectorAll(".all-games-deals")
 sBtn.addEventListener("click", fetchDeals)
 sInput.addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
@@ -127,4 +128,4 @@ sideXbtn.addEventListener('click', function () {
 })
 
 
-
+loadCart()

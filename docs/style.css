@@ -30,7 +30,7 @@ h1 {
     text-align: center;
     color: #67afee;
     margin-bottom: 30px;
-    
+
 }
 
 .logo {
@@ -49,7 +49,7 @@ h1 {
 
 
 .s-box {
-    justify-content: center; 
+    justify-content: center;
     display: flex;
     gap: 10px;
     width: 90%;
@@ -57,7 +57,7 @@ h1 {
 }
 
 #s-input {
-    
+
     max-width: 1000px;
     flex: 1;
     padding: 12px 16px;
@@ -77,7 +77,7 @@ h1 {
 #s-btn {
     padding: 12px 24px;
     background: #d64cad;
-    border:  #30363d 1px solid;
+    border: #30363d 1px solid;
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
@@ -128,7 +128,8 @@ h1 {
 
 #f-tog {
     padding: 12px 24px;
-    background: #d64cad;;
+    background: #d64cad;
+    ;
     border: none;
     border-radius: 8px;
     font-weight: bold;
@@ -139,13 +140,11 @@ h1 {
 .f-menu {
     display: none;
     gap: 100px;
-    justify-content:center;
+    justify-content: center;
     max-width: 10000px;
 }
 
-#f-menu {
-    
-}
+#f-menu {}
 
 #f-tog:hover {
     background: #f87fd4;
@@ -175,7 +174,7 @@ h2 {
     border-left: 4px solid #FF8A80;
 }
 
-.stores-box{
+.stores-box {
     overflow-y: scroll;
     max-height: 300px;
 }
@@ -211,12 +210,14 @@ h2 {
     padding: 15px;
 }
 
-.lowprice, .perc-saved, .rating-s {
+.lowprice,
+.perc-saved,
+.rating-s {
     font-size: 14px;
     color: #67afee;
     background-color: #161b22;
     padding: 10px 16px;
-    border:  #30363d 1px solid;
+    border: #30363d 1px solid;
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
@@ -228,7 +229,9 @@ h2 {
     margin-top: 10px;
 }
 
-.lowprice:hover, .perc-saved:hover, .rating-s:hover {
+.lowprice:hover,
+.perc-saved:hover,
+.rating-s:hover {
     background-color: #1e252e;
 }
 
@@ -242,13 +245,13 @@ h2 {
 }
 
 .ildiv input {
-    appearance: none; 
+    appearance: none;
     -webkit-appearance: none;
     width: 20px;
     height: 20px;
     border-radius: 4px;
     background-color: #22203b;
-    border: 1px solid #30363d; 
+    border: 1px solid #30363d;
     cursor: pointer;
     transition: .4s ease
 }
@@ -263,7 +266,7 @@ h2 {
     background-color: #1e2521;
 }
 
-.ildiv img{
+.ildiv img {
     border-radius: 100%;
 }
 
@@ -271,10 +274,12 @@ h2 {
     margin-bottom: 8px;
 }
 
-#sel-all, #des-all, #clear-sort {
+#sel-all,
+#des-all,
+#clear-sort {
     color: #67afee;
     background-color: #161b22;
-    border:  #30363d 1px solid;
+    border: #30363d 1px solid;
     border-radius: 4px;
     font-weight: bold;
     cursor: pointer;
@@ -292,7 +297,7 @@ h2 {
     box-shadow: 0 0 3px 2px #4c90cc;
 }
 
-.active:hover{
+.active:hover {
     background-color: #a4b4ca;
     color: #161b22;
     box-shadow: 0 0 3px 2px #576169;
@@ -309,7 +314,7 @@ h2 {
 #apply-changes {
     padding: 12px 24px;
     background: #d64cad;
-    border:  #30363d 1px solid;
+    border: #30363d 1px solid;
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
@@ -347,11 +352,11 @@ h2 {
     width: 250px;
     position: fixed;
     left: -250px;
-    transition: 0.3s; 
+    transition: 0.3s;
     background-color: #111;
 }
 
-.sidebar:hover{
+.sidebar:hover {
     background-color: #111;
 }
 
@@ -360,10 +365,10 @@ h2 {
     top: 0;
 }
 
-#sidebar-toggle{
+#sidebar-toggle {
     padding: 12px 24px;
     background: #36be58;
-    border:  #30363d 1px solid;
+    border: #30363d 1px solid;
     border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
     font-weight: bold;
@@ -446,3 +451,15 @@ h2 {
 .add-to-cart:hover {
     background: #1e40af;
 }
+.watchlist-card {
+    color: #67afee;
+    margin: 25px 15px;
+}
+.watchlist-card img {
+    width: 200px;
+    padding-left: 5px;
+    height: 150px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
