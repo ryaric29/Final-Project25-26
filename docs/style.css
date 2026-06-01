@@ -95,12 +95,6 @@ h1 {
     gap: 20px;
 }
 
-.deal-card {
-    background: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 12px;
-    overflow: hidden;
-}
 
 .deal-img {
     margin: 10px;
@@ -108,7 +102,7 @@ h1 {
     box-shadow: 0 0 5px 3px #67afee;
     width: 200px;
     height: 200px;
-    object-fit: cover;
+    object-fit: fill;
     flex-shrink: 0;
 }
 
@@ -208,6 +202,10 @@ h2 {
     align-items: center;
     gap: 20px;
     padding: 15px;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .lowprice,
@@ -229,9 +227,7 @@ h2 {
     margin-top: 10px;
 }
 
-.lowprice:hover,
-.perc-saved:hover,
-.rating-s:hover {
+.lowprice:hover,.perc-saved:hover, .rating-s:hover {
     background-color: #1e252e;
 }
 
