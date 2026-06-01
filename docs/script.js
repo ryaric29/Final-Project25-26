@@ -94,17 +94,15 @@ function displayDeals(data) {
         const inCart = cart.some(item => item.gameID === deal.gameID)
         card.innerHTML = `
             <img class="deal-img" src="${imageUrl}" alt="${deal.title}">
-            <div class="deal-price"><strong class="sale-price">$${deal.salePrice}</strong> <s class="normal-price">$${deal.normalPrice}</s></div>
             <div class="info">
                 <h3 class="deal-title">${deal.title}</h3>
+               <div class="price-row"><div class="deal-price"><strong class="sale-price">$${deal.salePrice}</strong> <s class="normal-price">$${deal.normalPrice}</s></div></div>
             </div>
-            <a class="link-to-btn" href="https://www.cheapshark.com/redirect?dealID=${deal.dealID}" target="_blank">
-                <button class="link-to-btn"><img class="link-to-image" src="images/external-link (1).svg"></button></a>
-            </a>
-            <button class="all-games-deals"> See more deals for ${deal.title} </button>
-            <button class="add-to-cart">
-    ${inCart ? "Remove from Cart" : "Add to Cart"}
-</button>
+            <div class="actions"><a href="https://www.cheapshark.com/redirect?dealID=${deal.dealID}" target="_blank" class="icon-btn">
+            <img class="link-to-image" src="images/external-link (1).svg">
+             
+        </a>  
+        <button class="add-to-cart"> ${inCart ? "Remove from Cart" : "Add to Cart"}</button>
         `
         resContainer.appendChild(card)
         const addBtn = card.querySelector(".add-to-cart")

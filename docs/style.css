@@ -34,7 +34,6 @@ h1 {
 }
 
 .logo {
-
     font-size: 35px;
     font-weight: bold;
     color: #ffffff;
@@ -57,7 +56,6 @@ h1 {
 }
 
 #s-input {
-
     max-width: 1000px;
     flex: 1;
     padding: 12px 16px;
@@ -91,19 +89,18 @@ h1 {
 
 .results-grid {
     display: grid;
-    grid-template-rows: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px;
+    margin: 0 auto;
 }
 
-
 .deal-img {
-    margin: 10px;
-    border-radius: 25px;
-    box-shadow: 0 0 5px 3px #67afee;
     width: 200px;
     height: 200px;
-    object-fit: fill;
+    object-fit: cover;
+    border-radius: 15px;
     flex-shrink: 0;
+    box-shadow: 0 0 5px 3px #67afee;
 }
 
 .deal-card .info {
@@ -192,20 +189,39 @@ h2 {
     margin-top: 5px;
     margin-bottom: 5px;
 }
+.price-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
 
+.actions button{
+    width: 160px;
+}
+.icon-btn {
+    align-self: flex-end;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .deal-card {
-    min-width: 90%;
-    max-width: 90%;
+    width: 90%;
     margin: 0 auto;
     display: flex;
-    flex-direction: row;
-    align-items: center;
     gap: 20px;
     padding: 15px;
     background: #161b22;
     border: 1px solid #30363d;
     border-radius: 12px;
-    overflow: hidden;
+    align-items: flex-start;
 }
 
 .lowprice,
@@ -227,7 +243,9 @@ h2 {
     margin-top: 10px;
 }
 
-.lowprice:hover,.perc-saved:hover, .rating-s:hover {
+.lowprice:hover,
+.perc-saved:hover,
+.rating-s:hover {
     background-color: #1e252e;
 }
 
@@ -325,24 +343,6 @@ h2 {
     background: #f87fd4;
 }
 
-.all-games-deals {
-    display: inline-flex;
-    align-items: right;
-    justify-content: right;
-    width: fit-content;
-    padding: 10px 18px;
-    background: #2563eb;
-    color: white;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.2s ease;
-}
-
-.all-games-deals:hover {
-    background: #1e40af;
-}
-
 .sidebar {
     height: 100%;
     width: 250px;
@@ -397,13 +397,20 @@ h2 {
 }
 
 .link-to-btn {
-    width: 90px;
-    height: 50px;
-    margin-bottom: 15px;
-    position: absolute;
-    right: 5%;
-    background-color: #2a2f32;
-    border-left: #0f3e80 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.link-to-btn:hover {
+    background: #1e40af;
 }
 
 .normal-price {
@@ -424,33 +431,27 @@ h2 {
 .info {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 12px;
     flex: 1;
-    text-align: left;
 }
 
-.add-to-cart {
-    display: inline-flex;
-    align-items: right;
-    justify-content: right;
-    width: fit-content;
-    padding: 10px 18px;
-    background: #2563eb;
-    color: white;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.2s ease;
+.deal-price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.add-to-cart:hover {
-    background: #1e40af;
+.card-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
+
 .watchlist-card {
     color: #67afee;
     margin: 25px 15px;
 }
+
 .watchlist-card img {
     width: 200px;
     padding-left: 5px;
@@ -459,3 +460,22 @@ h2 {
     object-fit: cover;
 }
 
+.all-games-deals,
+.add-to-cart {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.all-games-deals:hover,
+.add-to-cart:hover {
+    background: #1e40af;
+}
