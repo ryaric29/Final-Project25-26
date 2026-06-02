@@ -40,30 +40,24 @@ function renderCart() {
         const removeBtn = card.querySelector(".remove-btn")
         removeBtn.addEventListener("click", function () {
             toggleCart(game)
-            
+
         })
     }
 }
 
 function toggleCart(game) {
-    let found = false
-    for (let i = 0; i < cart.length; i++) {
-        if (cart[i].gameID === game.gameID) {
-            found = true
-            break
-        }
-    }
-    if (found) {
-        const newCart = []
-        for (let i = 0; i < cart.length; i++) {
-            if (cart[i].gameID !== game.gameID) {
-                newCart.push(cart[i])
-            }
-        }
-        cart = newCart
+    const index = cart.findIndex(item => item.gameID === game.gameID)
+
+    if (index !== -1) {
+        cart.splice(index, 1)
     } else {
         cart.push(game)
     }
+
     saveCart()
     renderCart()
+
+    if (currentResults.length > 0) {
+        displayDeals(currentResults)
+    }
 }

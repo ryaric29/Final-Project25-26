@@ -108,14 +108,16 @@ function displayDeals(data) {
         resContainer.appendChild(card)
 
         const addBtn = card.querySelector(".add-to-cart")
+
+        const inCart = cart.some(item => item.gameID === deal.gameID)
+
+        if (inCart) {
+            addBtn.classList.add("on")
+            addBtn.textContent = "Remove from Cart"
+        }
+
         addBtn.addEventListener("click", () => {
             toggleCart(deal)
-
-            if (addBtn.classList.toggle("on")) {
-                addBtn.textContent = "Remove from Cart"
-            } else {
-                addBtn.textContent = "Add to Cart"
-            }
         })
 
     })
