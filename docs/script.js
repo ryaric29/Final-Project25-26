@@ -91,9 +91,10 @@ function displayDeals(data) {
         let imageUrl = deal.thumb
         const card = document.createElement("div")
         card.className = "deal-card"
-        const inCart = cart.some(item => item.gameID === deal.gameID)
         card.innerHTML = `
-            <img class="deal-img" src="${imageUrl}" alt="${deal.title}">
+            <div class="img-wrap">
+        <img class="deal-img" src="${deal.thumb}" alt="${deal.title}">
+          <div class="disc-badge"><img class="tag" src="images/tag (1).svg"></img> -${Math.round(deal.savings)}%</div></div>
             <div class="info">
                 <h3 class="deal-title">${deal.title}</h3>
                <div class="price-row"><div class="deal-price"><strong class="sale-price">$${deal.salePrice}</strong> <s class="normal-price">$${deal.normalPrice}</s></div></div>
@@ -102,14 +103,25 @@ function displayDeals(data) {
             <img class="link-to-image" src="images/external-link (1).svg">
              
         </a>  
-        <button class="add-to-cart"> ${inCart ? "Remove from Cart" : "Add to Cart"}</button>
+        <button class="add-to-cart">Add to Cart</button>
         `
         resContainer.appendChild(card)
-        const addBtn = card.querySelector(".add-to-cart")
 
-        addBtn.addEventListener("click", function () {
+        const addBtn = card.querySelector(".add-to-cart")
+        addBtn.addEventListener("click", () => {
             toggleCart(deal)
+
+            const inCart = cart.some(item => item.gameID === deal.gameID)
+
+            addBtn.classList.add("fade")
+
+            setTimeout(() => {
+                addBtn.textContent = inCart ? "Remove from Cart" : "Add to Cart"
+                addBtn.classList.toggle("on", inCart)
+                addBtn.classList.remove("fade")
+            }, 120)
         })
+
     })
 
 }

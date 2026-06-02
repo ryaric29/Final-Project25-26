@@ -18,6 +18,7 @@ body {
     background-color: #02192e;
     padding: 30px 30px;
     margin-bottom: 15px;
+    font-family: "Chango", sans-serif;
 }
 
 .main-header .container {
@@ -89,7 +90,7 @@ h1 {
 
 .results-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     margin: 0 auto;
 }
@@ -97,7 +98,7 @@ h1 {
 .deal-img {
     width: 200px;
     height: 200px;
-    object-fit: cover;
+    object-fit: fill;
     border-radius: 15px;
     flex-shrink: 0;
     box-shadow: 0 0 5px 3px #67afee;
@@ -157,7 +158,6 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* Style for the Watchlist */
 h2 {
     color: #67afee;
     margin-top: 40px;
@@ -168,12 +168,6 @@ h2 {
 .stores-box {
     overflow-y: scroll;
     max-height: 300px;
-}
-
-.watchlist-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
 }
 
 .price-input {
@@ -189,11 +183,13 @@ h2 {
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
 .price-row {
     display: flex;
     gap: 10px;
     align-items: center;
 }
+
 .actions {
     display: flex;
     flex-direction: column;
@@ -201,9 +197,10 @@ h2 {
     gap: 10px;
 }
 
-.actions button{
+.actions button {
     width: 160px;
 }
+
 .icon-btn {
     align-self: flex-end;
     width: 40px;
@@ -212,6 +209,7 @@ h2 {
     align-items: center;
     justify-content: center;
 }
+
 .deal-card {
     width: 90%;
     margin: 0 auto;
@@ -222,6 +220,16 @@ h2 {
     border: 1px solid #30363d;
     border-radius: 12px;
     align-items: flex-start;
+    opacity: 0;
+    transform: translateY(15px);
+    animation: fadeUp 0.4s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .lowprice,
@@ -350,6 +358,7 @@ h2 {
     left: -250px;
     transition: 0.3s;
     background-color: #111;
+    z-index: 1000;
 }
 
 .sidebar:hover {
@@ -424,8 +433,10 @@ h2 {
 }
 
 .deal-title {
-    font-size: 19px;
-    color: #114776;
+    font-size: 29px;
+    color: #d7ecff;
+    font-family: "Orbitron", sans-serif;
+    text-shadow: 0 0 10px #e2e2e2;
 }
 
 .info {
@@ -447,17 +458,17 @@ h2 {
     flex-wrap: wrap;
 }
 
-.watchlist-card {
+.cart-card {
     color: #67afee;
     margin: 25px 15px;
 }
 
-.watchlist-card img {
+.cart-card img {
     width: 200px;
     padding-left: 5px;
     height: 150px;
     border-radius: 15px;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 .all-games-deals,
@@ -466,7 +477,7 @@ h2 {
     align-items: center;
     justify-content: center;
     padding: 10px 18px;
-    background: #2563eb;
+    background: #1f2937;
     color: white;
     border: none;
     border-radius: 10px;
@@ -476,6 +487,53 @@ h2 {
 }
 
 .all-games-deals:hover,
-.add-to-cart:hover {
-    background: #1e40af;
+{
+background: #2f3447;
+}
+
+.img-wrap {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.disc-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #36ad54;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-to-cart {
+    background: #25412f;
+    color: rgb(219, 211, 211);
+    transition: background 1s ease, transform 1s ease;
+}
+
+.remove-btn {
+    background: #3f2323;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 10px 18px;
+    transition: background 0.2s ease;
+}
+
+.add-to-cart.fade {
+    opacity: 0;
+    transform: scale(0.95);
+    background: #3f2323;
+}
+
+.add-to-cart.on {
+    background: #3f2323;
 }

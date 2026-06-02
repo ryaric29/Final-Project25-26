@@ -26,7 +26,7 @@ function renderCart() {
     for (let i = 0; i < cart.length; i++) {
         const game = cart[i]
         const card = document.createElement("div")
-        card.className = "watchlist-card"
+        card.className = "cart-card"
         card.innerHTML = `
         <img src="${game.thumb}" alt="${game.title}">
         <div class="info">
@@ -65,5 +65,4 @@ function toggleCart(game) {
     }
     saveCart()
     renderCart()
-    displayDeals(currentResults)
 }
