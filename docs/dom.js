@@ -40,6 +40,7 @@ function renderCart() {
         const removeBtn = card.querySelector(".remove-btn")
         removeBtn.addEventListener("click", function () {
             toggleCart(game)
+            
         })
     }
 }

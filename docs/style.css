@@ -195,6 +195,7 @@ h2 {
     flex-direction: column;
     align-items: flex-end;
     gap: 10px;
+    min-width: 0;
 }
 
 .actions button {
@@ -444,6 +445,7 @@ h2 {
     flex-direction: column;
     gap: 12px;
     flex: 1;
+    min-width: 0;
 }
 
 .deal-price {
@@ -486,8 +488,7 @@ h2 {
     transition: 0.2s ease;
 }
 
-.all-games-deals:hover,
-{
+.all-games-deals:hover {
 background: #2f3447;
 }
 

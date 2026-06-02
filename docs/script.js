@@ -111,15 +111,11 @@ function displayDeals(data) {
         addBtn.addEventListener("click", () => {
             toggleCart(deal)
 
-            const inCart = cart.some(item => item.gameID === deal.gameID)
-
-            addBtn.classList.add("fade")
-
-            setTimeout(() => {
-                addBtn.textContent = inCart ? "Remove from Cart" : "Add to Cart"
-                addBtn.classList.toggle("on", inCart)
-                addBtn.classList.remove("fade")
-            }, 120)
+            if (addBtn.classList.toggle("on")) {
+                addBtn.textContent = "Remove from Cart"
+            } else {
+                addBtn.textContent = "Add to Cart"
+            }
         })
 
     })
