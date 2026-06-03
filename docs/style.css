@@ -224,6 +224,7 @@ h2 {
     opacity: 0;
     transform: translateY(15px);
     animation: fadeUp 0.4s ease forwards;
+    animation-delay: calc(var(--i) * 0.06s);
 }
 
 @keyframes fadeUp {
@@ -537,4 +538,11 @@ background: #2f3447;
 
 .add-to-cart.on {
     background: #3f2323;
+}
+.loading-deals {
+    text-align: center;
+    padding: 40px;
+    color: #8b949e;
+    font-size: 30px;
+    font-style: italic;
 }

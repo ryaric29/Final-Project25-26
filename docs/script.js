@@ -16,6 +16,8 @@ function fetchDeals() {
     if (query === "") {
         resContainer.innerHTML = '<div class="empty-state">Please type a name</div>';
         return
+    } else {
+        resContainer.innerHTML = `<div class="loading-deals"><img src="images/download.svg" alt="">Loading deals...</div>`
     }
     let url = `https://www.cheapshark.com/api/1.0/deals?title=${query}`
     if (filteredStores.length < 35) {
@@ -87,10 +89,11 @@ function displayDeals(data) {
         resContainer.innerHTML = `<div class="empty-state">No Deals Found for "${sInput.value}" :( </div>`
         return
     }
-    data.forEach(deal => {
+    data.forEach((deal, i) => {
         let imageUrl = deal.thumb
         const card = document.createElement("div")
         card.className = "deal-card"
+        card.style.setProperty('--i', i)
         card.innerHTML = `
             <div class="img-wrap">
         <img class="deal-img" src="${deal.thumb}" alt="${deal.title}">
