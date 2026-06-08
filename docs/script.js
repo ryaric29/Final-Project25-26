@@ -120,7 +120,27 @@ function displayDeals(data) {
         }
 
         addBtn.addEventListener("click", () => {
-            toggleCart(deal)
+            let index = -1
+
+            for (let i = 0; i < cart.length; i++) {
+                if (cart[i].gameID === deal.gameID) {
+                    index = i
+                    break
+                }
+            }
+
+            if (index !== -1) {
+                cart.splice(index, 1)
+                addBtn.classList.remove("on")
+                addBtn.textContent = "Add to Cart"
+            } else {
+                cart.push(deal)
+                addBtn.classList.add("on")
+                addBtn.textContent = "Remove from Cart"
+            }
+
+            saveCart()
+            renderCart()
         })
 
     })

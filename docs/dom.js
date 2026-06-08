@@ -57,7 +57,5 @@ function toggleCart(game) {
     saveCart()
     renderCart()
 
-    if (currentResults.length > 0) {
-        displayDeals(currentResults)
-    }
+    
 }
