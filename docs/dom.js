@@ -1,8 +1,7 @@
 const cartContainer = document.querySelector("#cart-container")
+const cartTotalEl = document.querySelector("#cart-total")
 let cart = []
 
-
-// LOCAL STORAGE FUNCTIONS
 function loadCart() {
     const saved = localStorage.getItem("gameDeals")
     if (saved !== null) {
@@ -10,7 +9,16 @@ function loadCart() {
     }
     renderCart()
 }
+function updateCartTotal() {
+    let total = 0
 
+    for (let i = 0; i < cart.length; i++) {
+        total += Number(cart[i].salePrice)
+    }
+
+    document.querySelector("#cart-total").textContent =
+        `Total: $${total.toFixed(2)}`
+}
 function saveCart() {
     localStorage.setItem("gameDeals", JSON.stringify(cart))
 }
@@ -40,9 +48,10 @@ function renderCart() {
         const removeBtn = card.querySelector(".remove-btn")
         removeBtn.addEventListener("click", function () {
             toggleCart(game)
-
+           
         })
     }
+    updateCartTotal()
 }
 
 function toggleCart(game) {
@@ -56,6 +65,5 @@ function toggleCart(game) {
 
     saveCart()
     renderCart()
-
-    
+    displayDeals(currentResults)
 }

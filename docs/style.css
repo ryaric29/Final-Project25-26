@@ -546,3 +546,11 @@ background: #2f3447;
     font-size: 30px;
     font-style: italic;
 }
+#cart-total {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #d9e0e6;
+    font-weight: bold;
+    font-size: 30px;
+}
