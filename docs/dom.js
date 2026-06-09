@@ -27,6 +27,8 @@ function renderCart() {
         cartContainer.innerHTML = `
         <div class="empty-state">Your cart is empty. Add deals to see them here!</div>      
         `
+        document.querySelector("#cart-total").textContent =
+        `Total: $${0}`
         return
     }
 
@@ -36,12 +38,16 @@ function renderCart() {
         const card = document.createElement("div")
         card.className = "cart-card"
         card.innerHTML = `
-        <img src="${game.thumb}" alt="${game.title}">
+        <img class="cart-image" src="${game.thumb}" alt="${game.title}">
         <div class="info">
             <h3>${game.title}</h3>
             <div class="deal-price"><strong class="sale-price">$${game.salePrice}</strong> <s class="normal-price">$${game.normalPrice}</s></div>
+             <div class="card-buttons">
             <button class="remove-btn">❌ Remove</button>
-            
+            <a href="https://www.cheapshark.com/redirect?dealID=${game.dealID}" target="_blank" class="icon-btn">
+                <img class="link-to-image-cart" src="images/external-link (1).svg">
+            </a>
+        </div>            
         </div>
         `
         cartContainer.appendChild(card)
