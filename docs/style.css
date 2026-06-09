@@ -554,3 +554,7 @@ background: #2f3447;
     font-weight: bold;
     font-size: 30px;
 }
+#cart-container{
+    max-height: 85vh;
+    overflow-y: auto;
+}
